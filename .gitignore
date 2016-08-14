@@ -1,29 +1,28 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# User-specific files
+*.suo
+*.user
+*.db
+*.userosscache
+*.sln.docstates
 
-# Precompiled Headers
-*.gch
-*.pch
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+*_log.html
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+Engine/
+Example/
+Screenshot/
 
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# Visual Studio 2015 cache/options directory
+.vs/
