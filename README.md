@@ -10,6 +10,11 @@ Siv3D + MMD
 |Siv3D (Siv3DPackage(March2016).zip)|http://play-siv3d.hateblo.jp/|
 |MMDモデル|http://www.geocities.jp/higuchuu4/|
 
+# 注意
+https://github.com/h-adachi/Siv3MMD/blob/master/Siv3MMD/Main.cpp
+のソースコードでpmdファイルの読み込みに必要なパスの指定をあえてしていません。
+各自の環境に合わせてpmdファイルの読み込みを実施して下さい。
+
 # 参考
 * http://blog.goo.ne.jp/torisu_tetosuki
 
