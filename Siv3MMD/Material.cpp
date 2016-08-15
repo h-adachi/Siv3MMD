@@ -3,13 +3,13 @@
 
 void LoadTexture(const String& current, String& dest, const std::string src)
 {
-	if (!src[0]) return;
+	if (src.empty())
+	{
+		return;
+	}
 
-	size_t length = src.length();
-	dest.resize(length);
-	size_t out;
-	mbstowcs_s(&out, &dest[0], length, src.c_str(), _TRUNCATE);
-	dest = current + dest;
+	dest = current + Widen(src);
+
 	if (!TextureAsset::IsRegistered(dest))
 	{
 		TextureAsset::Register(dest, dest, TextureDesc::For3D);
@@ -49,12 +49,14 @@ bool mmd::Material::Create(BinaryReader & reader)
 	std::string fileInfo;
 	fileInfo.resize(20);
 	reader.read(&fileInfo[0], 20);
-	std::string textureFileName;
-	std::string sphereFileName;
-
-	if (fileInfo[0])
+	while (!fileInfo.empty() && !IsPrint(fileInfo.back()))
 	{
-		// “Ç‚İ‚ñ‚¾filename‚É*‚ª‘¶İ‚µ‚½ê‡‚ÍƒXƒtƒBƒA–¼‚àŠÜ‚Ş.
+		fileInfo.pop_back();
+	}
+
+	if (!fileInfo.empty())
+	{
+		// èª­ã¿è¾¼ã‚“ã filenameã«*ãŒå­˜åœ¨ã—ãŸå ´åˆã¯ã‚¹ãƒ•ã‚£ã‚¢åã‚‚å«ã‚€.
 		if (fileInfo.find("*") != -1)
 		{
 			size_t index = fileInfo.find("*");
@@ -65,7 +67,7 @@ bool mmd::Material::Create(BinaryReader & reader)
 		{
 			textureFileName = fileInfo;
 		}
-		// ƒJƒŒƒ“ƒgƒpƒX‚ğæ“¾.
+		// ã‚«ãƒ¬ãƒ³ãƒˆãƒ‘ã‚¹ã‚’å–å¾—.
 		String currentPath = reader.path();
 		size_t index = currentPath.lastIndexOf(L"/") + 1;
 		currentPath = currentPath.substr(0, index);
