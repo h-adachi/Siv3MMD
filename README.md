@@ -2,12 +2,13 @@
 Siv3D + MMD
 
 # 動作確認済み環境
-* Windows 10(x64)
-* Visual Stdio 2015 Update 3
-* Siv3D (Siv3DPackage(March2016).zip)
-** http://play-siv3d.hateblo.jp/
-* MMDモデル
-** http://www.geocities.jp/higuchuu4/
+
+| 環境        | 参照URL        |
+|:---------------:|:---------------:|
+|Windows 10(x64)||
+|Visual Stdio 2015 Update 3||
+|Siv3D (Siv3DPackage(March2016).zip)|http://play-siv3d.hateblo.jp/|
+|MMDモデル|http://www.geocities.jp/higuchuu4/|
 
 # 参考
 * http://blog.goo.ne.jp/torisu_tetosuki
