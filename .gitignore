@@ -2,6 +2,7 @@
 *.suo
 *.user
 *.db
+*.opendb
 *.userosscache
 *.sln.docstates
 

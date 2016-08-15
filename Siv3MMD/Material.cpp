@@ -56,6 +56,8 @@ bool mmd::Material::Create(BinaryReader & reader)
 
 	if (!fileInfo.empty())
 	{
+		std::string textureFileName;
+		std::string sphereFileName;
 		// 読み込んだfilenameに*が存在した場合はスフィア名も含む.
 		if (fileInfo.find("*") != -1)
 		{
